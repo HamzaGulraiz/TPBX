@@ -1,0 +1,36 @@
+const colors = {
+  DARK: {
+    BACKGROUND: '#16234D',
+    WHITE_BUTTON: '#FDFEFF',
+    LIGHT_BLUE_BUTTON: '#81CBFC',
+    GREY_BUTTON: '#828282',
+    CARD: '#223266',
+    BLACK_TEXT: '#16234D',
+    WHITE_TEXT: '#FDFEFF',
+    GREEN_TEXT: '#00FF94',
+    RED_TEXT: '#00FF94',
+    BLUE_TEXT: '#81CBFC',
+    DIVIDER: 'rgba(129, 203, 252, 0.15)',
+    DOTACTIVE: '#FDFEFF',
+    DOTINACTIVE: '#BDBDBD',
+    TRANSPARENT: 'transparent',
+  },
+  LIGHT: {
+    BACKGROUND: '#16234D',
+    WHITE_BUTTON: '#FDFEFF',
+    LIGHT_BLUE_BUTTON: '#223266',
+    CARD: '#223266',
+    BLACK_TEXT: '#16234D',
+    WHITE_TEXT: '#FDFEFF',
+    GREEN_TEXT: '#00FF94',
+    RED_TEXT: '#00FF94',
+    BLUE_TEXT: '#81CBFC',
+    DIVIDER_COLOR: 'rgba(255,255,255,0.2)',
+    DOTACTIVE: '#FDFEFF',
+    DOTINACTIVE: '#BDBDBD',
+    CARD_DIVIDER_COLOR: '#81CBFC17',
+    TRANSPARENT: 'transparent',
+  },
+};
+
+export default colors;
