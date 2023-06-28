@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     color: colors.DARK.WHITE_TEXT,
   },
   icon: {
-    height: hp(2.7),
+    height: hp(2),
     width: wp(5.8),
   },
   rightIcon: {

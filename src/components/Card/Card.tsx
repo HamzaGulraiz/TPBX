@@ -6,12 +6,17 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import colors from '../../../assets/colors/colors';
 import Divider from '../Divider/Divider';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import fonts from '../../../assets/fonts/fonts';
+import fontsizes from '../../../assets/fontsizes/fontsizes';
+import icons from '../../../assets/icons/icons';
 
 type CustomCardProps = {
   onPress?: () => void;
   title?: string;
   textColor?: string;
   leftIcon?: any;
+  leftIconTintColor?: string;
   flagIcon?: any;
   switchButton?: boolean;
   selectedText?: string;
@@ -33,6 +38,7 @@ const CustomCard: React.FC<CustomCardProps> = ({
   title,
   textColor,
   leftIcon,
+  leftIconTintColor,
   flagIcon,
   switchButton,
   selectedText,
@@ -50,7 +56,8 @@ const CustomCard: React.FC<CustomCardProps> = ({
 }) => {
   return (
     <>
-      <View
+      <TouchableOpacity
+        onPress={onPress}
         style={{
           ...styles.container,
           backgroundColor: backgroundColor ? backgroundColor : colors.DARK.CARD,
@@ -66,10 +73,45 @@ const CustomCard: React.FC<CustomCardProps> = ({
           marginBottom: marginBottom ? marginBottom : 0,
         }}>
         {leftIcon ? (
-          <Image source={leftIcon} resizeMode="contain" style={styles.icon} />
+          <Image
+            source={leftIcon}
+            resizeMode="contain"
+            style={{
+              ...styles.icon,
+              tintColor: leftIconTintColor
+                ? leftIconTintColor
+                : colors.DARK.WHITE_BUTTON,
+            }}
+          />
         ) : null}
-        <Text style={styles.title}>{title}</Text>
-      </View>
+        {flagIcon ? (
+          <Image
+            source={flagIcon}
+            resizeMode="contain"
+            style={styles.flagIcon}
+          />
+        ) : null}
+        <Text
+          numberOfLines={1}
+          style={{...styles.title, color: colors.DARK.WHITE_TEXT}}>
+          {title}
+        </Text>
+        {selectedText ? (
+          <Text
+            numberOfLines={1}
+            style={{
+              ...styles.selectedText,
+              color: selectTextColor ? selectTextColor : colors.DARK.WHITE_TEXT,
+            }}>
+            {selectedText}
+          </Text>
+        ) : null}
+        <Image
+          source={icons.FORWARD_ARROW}
+          resizeMode="contain"
+          style={styles.arrowIcon}
+        />
+      </TouchableOpacity>
       {divider ? (
         <Divider height={hp(0.117)} width={wp(88.8)} />
       ) : (
@@ -92,9 +134,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // backgroundColor: 'blue',
   },
-  title: {},
+  title: {
+    width: wp(45),
+    fontSize: fontsizes.px_15,
+    fontWeight: '500',
+    textAlign: 'left',
+    fontFamily: fonts.REGULAR,
+    marginLeft: wp(4.8),
+    // backgroundColor: 'red',
+  },
+  selectedText: {
+    // backgroundColor: 'red',
+    width: wp(15),
+    fontSize: fontsizes.px_12,
+    fontWeight: '500',
+    textAlign: 'right',
+    fontFamily: fonts.REGULAR,
+    // position: 'absolute',
+  },
   icon: {
     marginLeft: wp(5.8),
+    height: hp(2.81),
+    width: wp(6.1),
+  },
+  flagIcon: {
+    marginLeft: wp(5.8),
+    height: hp(4.6),
+    width: wp(8),
+  },
+  arrowIcon: {
+    position: 'absolute',
+    right: wp(2.5),
+    bottom: hp(2.4),
     height: hp(2.81),
     width: wp(6.1),
   },

@@ -7,3 +7,5 @@ export const WALLET = 'Wallet';
 export const TRADES = 'Trades';
 export const ACTIVITY = 'Activity';
 export const SETTINGS = 'Settings';
+export const THEME = 'Theme';
+export const LANGUAGE = 'Language';

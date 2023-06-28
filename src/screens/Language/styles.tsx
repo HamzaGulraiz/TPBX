@@ -11,6 +11,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  TMView: {
+    width: '100%',
+    position: 'absolute',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    bottom: hp(2),
+  },
   TM_VERSION: {
     fontSize: fontsizes.px_12,
     fontWeight: '500',
